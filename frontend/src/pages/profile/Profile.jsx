@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import "./Profile.css"
 import { userLogout } from '../../redux/actions/authAction'
@@ -24,7 +24,12 @@ const Profile = () =>
         <div className='userProfile'>
             <img src={userInfo.avatar} alt={userInfo.username} />
             <div className='userProfileDropdown'>
-                <p>My Bookings</p>
+                <Link to='/mybookings'>
+                    <p>My Bookings</p>
+                </Link>
+                <Link to='/update/profile'>
+                    <p>Update Profile</p>
+                </Link>
                 <p className='btn' onClick={handleLogout}>Logout</p>
             </div>
         </div>

@@ -57,7 +57,10 @@ const Header = () =>
                     <p>Home</p>
                     <p>Our Collections</p>
                     <p>About Us</p>
-                    <p onClick={handleNavigate} className='btn'>Sign In</p>
+                    {
+                        userInfo ? <Profile /> :
+                            <p onClick={handleNavigate} className='btn'>Sign In</p>
+                    }
                 </section>
                 : ""
             }

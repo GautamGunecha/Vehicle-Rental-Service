@@ -10,9 +10,14 @@ import Reset from '../pages/auth/reset/Reset'
 import Profile from '../pages/profile/Profile'
 
 import Collections from '../pages/collections/Collections'
+import { useSelector } from 'react-redux'
+import UserBookings from '../pages/bookings/UserBookings'
+import UpdateProfile from '../pages/profile/UpdateProfile'
 
 const MyRoutes = () =>
 {
+    const { userInfo } = useSelector(state => state.userLogin)
+
     return (
         <BrowserRouter>
             <Routes>
@@ -28,7 +33,8 @@ const MyRoutes = () =>
 
                 {/* functional routes */}
                 <Route exact path='/collections' element={<Collections />} />
-
+                <Route exact path='/mybookings' element={userInfo ? <UserBookings /> : <Home />} />
+                <Route exact path='/update/profile' element={userInfo ? <UpdateProfile /> : <Home />} />
             </Routes>
         </BrowserRouter>
     )
