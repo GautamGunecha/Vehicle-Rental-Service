@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Vehicle Rental service.",
+  "main": "index.js",
+  "repository": "https://github.com/GautamGunecha/Vehicle-Rental",
+  "author": "Gautam Gunecha",
+  "license": "MIT"
+}
