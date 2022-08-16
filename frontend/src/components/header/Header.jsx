@@ -35,7 +35,7 @@ const Header = () =>
                             userInfo ?
                                 <Profile />
                                 :
-                                <button onClick={handleNavigate}>Sign In</button>
+                                <li className='btn' onClick={() => handleNavigate()}>Sign In</li>
                         }
                     </ul>
                 </nav>
@@ -57,7 +57,7 @@ const Header = () =>
                     <p>Home</p>
                     <p>Our Collections</p>
                     <p>About Us</p>
-                    <button>Sign In</button>
+                    <p onClick={handleNavigate} className='btn'>Sign In</p>
                 </section>
                 : ""
             }

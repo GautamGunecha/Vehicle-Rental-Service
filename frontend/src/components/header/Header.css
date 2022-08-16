@@ -16,9 +16,12 @@
     gap: 1.5em;
 }
 
-.header nav ul button {
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
     background-color: #ff1e00;
-    border: none;
     border-radius: 50px;
     width: 7em;
 }
@@ -52,9 +55,13 @@
         cursor: pointer;
     }
 
-    .header-mobile button {
+    .btn {
+        display: flex;
         background-color: #ff1e00;
         border: none;
+        padding: 10px;
         border-radius: 50px;
+        justify-content: center;
+        align-items: center;
     }
 }

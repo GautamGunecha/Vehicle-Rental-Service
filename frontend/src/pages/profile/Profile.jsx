@@ -25,7 +25,7 @@ const Profile = () =>
             <img src={userInfo.avatar} alt={userInfo.username} />
             <div className='userProfileDropdown'>
                 <p>My Bookings</p>
-                <button onClick={handleLogout}>Logout</button>
+                <p className='btn' onClick={handleLogout}>Logout</p>
             </div>
         </div>
     )
