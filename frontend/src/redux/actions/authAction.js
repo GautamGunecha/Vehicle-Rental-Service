@@ -26,3 +26,32 @@ export const loginAction = (data) => async (dispatch) =>
         })
     }
 }
+
+export const userLogout = () => async (dispatch) =>
+{
+    try
+    {
+        dispatch({
+            type: actionTypes.LOADING,
+            payload: true
+        })
+
+        dispatch({
+            type: actionTypes.USER_LOGOUT,
+            payload: []
+        })
+
+        localStorage.removeItem('userInfo')
+
+        dispatch({
+            type: actionTypes.LOADING,
+            payload: false
+        })
+    } catch (error)
+    {
+        dispatch({
+            type: actionTypes.LOADING,
+            payload: false
+        })
+    }
+}

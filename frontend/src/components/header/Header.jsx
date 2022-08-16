@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import "./Header.css"
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import Profile from '../../pages/profile/Profile'
 
 const Header = () =>
 {
     const [showNav, setShowNav] = useState(false)
 
     const navigate = useNavigate()
+    const { userInfo } = useSelector(state => state.userLogin)
 
     const handleNavigate = () => navigate('/login')
 
@@ -28,7 +31,12 @@ const Header = () =>
                             <li>Our Collections</li>
                         </Link>
                         <li>About Us</li>
-                        <button onClick={handleNavigate}>Sign In</button>
+                        {
+                            userInfo ?
+                                <Profile />
+                                :
+                                <button onClick={handleNavigate}>Sign In</button>
+                        }
                     </ul>
                 </nav>
 
