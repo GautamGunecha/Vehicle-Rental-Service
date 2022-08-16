@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 import "./Header.css"
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
@@ -6,17 +7,27 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 const Header = () =>
 {
     const [showNav, setShowNav] = useState(false)
+
+    const navigate = useNavigate()
+
+    const handleNavigate = navigate('/login')
     return (
         <>
             <div className='header'>
-                <h1>Drim</h1>
+                <Link to='/'>
+                    <h1>Drim</h1>
+                </Link>
 
                 <nav>
                     <ul>
-                        <li>Home</li>
-                        <li>Our Collections</li>
+                        <Link to='/'>
+                            <li>Home</li>
+                        </Link>
+                        <Link to='/collections'>
+                            <li>Our Collections</li>
+                        </Link>
                         <li>About Us</li>
-                        <button>Sign In</button>
+                        <button onClick={handleNavigate}>Sign In</button>
                     </ul>
                 </nav>
 

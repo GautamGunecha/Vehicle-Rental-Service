@@ -1,0 +1,54 @@
+.login {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/images/loginwallpaper.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100vh;
+}
+
+.login-content {
+    color: #fff;
+}
+
+.login-content h1 {
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.login-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-content form label {
+    margin-bottom: .8em;
+    margin-top: .5em;
+}
+
+.login-content form input {
+    color: #fff;
+    background-color: transparent;
+    padding: 8px;
+    border: 1px solid #ff2800;
+    margin-bottom: 1em;
+}
+
+.login-content form button {
+    background-color: transparent;
+    color: #ff2800;
+    margin-bottom: 1em;
+    transition: 0.5s;
+}
+
+.login-content form button:hover {
+    background-color: #ff2800;
+    color: #000;
+}
+
+.loginRegister {
+    cursor: pointer;
+    color: #ff2800;
+}
