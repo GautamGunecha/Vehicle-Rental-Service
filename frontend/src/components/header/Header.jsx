@@ -10,7 +10,8 @@ const Header = () =>
 
     const navigate = useNavigate()
 
-    const handleNavigate = navigate('/login')
+    const handleNavigate = () => navigate('/login')
+
     return (
         <>
             <div className='header'>

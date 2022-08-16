@@ -41,6 +41,11 @@
     color: #ff2800;
     margin-bottom: 1em;
     transition: 0.5s;
+    border: 1px solid #000;
+}
+
+.loader {
+    margin: auto;
 }
 
 .login-content form button:hover {
@@ -51,4 +56,11 @@
 .loginRegister {
     cursor: pointer;
     color: #ff2800;
+}
+
+@media only screen and (max-width: 600px) {
+    .login-content form button {
+        margin-bottom: 1.5em;
+        border: 1px solid #000;
+    }
 }

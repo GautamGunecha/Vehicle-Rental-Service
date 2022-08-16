@@ -21,6 +21,7 @@ mongoose.connect(db, {
 }, () => console.log('connected to mongoDB'.yellow))
 
 app.get('/', (req, res) => res.send('Backend connected.'))
+app.use('/auth', require('./routes/userRoute'))
 
 // Node Error Handler
 app.use(notFound);
