@@ -1,0 +1,66 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(13, 12, 12);
+    color: #fff;
+    width: 100%;
+}
+
+.footer h1 {
+    font-size: 18px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.footer section {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+}
+
+.footer section p {
+    font-size: 12px;
+    width: 30em;
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+.footer section span {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 1em;
+}
+
+.footer section ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.footer section ul li {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.footer section ul li:hover {
+    color: red;
+}
+
+.youtube {
+    color: red;
+}
+
+.twitter,
+.linked,
+.facebook {
+    color: #0A66C2;
+}
+
+@media only screen and (max-width: 700px) {
+    .footer {
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
