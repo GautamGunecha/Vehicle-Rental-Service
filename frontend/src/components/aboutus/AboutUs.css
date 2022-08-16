@@ -1,0 +1,89 @@
+.aboutUs {
+    width: 80%;
+    margin: 1em auto;
+}
+
+.aboutUsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutUsContent h1 {
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.aboutUsContent p {
+    font-size: 15px;
+    text-align: justify;
+}
+
+.aboutUsDetails {
+    display: flex;
+    margin-top: 1em;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.aboutUsDetails span {
+    display: flex;
+    gap: .5em;
+}
+
+.aboutUsDetails span {
+    display: flex;
+    gap: .5em;
+}
+
+.aboutUsDetails p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.aboutUsContact {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aboutUsContactOfficial {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.aboutUsContactSocial {
+    display: flex;
+    gap: 1em;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .aboutUs {
+        width: 100%;
+        padding: 2em;
+    }
+
+    .aboutUsContent p {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .aboutUsContact {
+        margin: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .aboutUsContactOfficial {
+        gap: 5em;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+}
