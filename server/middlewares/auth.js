@@ -34,7 +34,7 @@ const auth = asyncHandler(async (req, res, next) =>
 
 const adminVerification = asyncHandler(async (req, res, next) =>
 {
-    await protect(req, res, () =>
+    await auth(req, res, () =>
     {
         if (req.user.isAdmin)
         {

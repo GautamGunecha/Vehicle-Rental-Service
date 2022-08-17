@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import Header from '../../components/header/Header'
-import { getAllVehicles } from '../../redux/actions/vehicleAction'
 import Loader from '../../components/alert/Loader'
 
 const Collections = () =>
@@ -14,7 +13,6 @@ const Collections = () =>
 
     useEffect(() =>
     {
-        dispatch(getAllVehicles())
     }, [dispatch])
 
     return (

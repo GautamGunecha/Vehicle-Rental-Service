@@ -1,2 +1,0 @@
-export const LOADING = 'LOADING'
-export const GET_ALL_VEHICLE_SUCCESS = 'GET_ALL_VEHICLE_SUCCESS'

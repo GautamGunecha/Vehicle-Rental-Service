@@ -1,4 +1,4 @@
-import * as actionType from '../constants/vehicleConstant'
+import * as actionType from '../constants/authConstant'
 
 const initialData = {
     loading: false
