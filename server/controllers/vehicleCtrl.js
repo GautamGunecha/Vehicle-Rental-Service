@@ -20,7 +20,6 @@ const getAllCars = asyncHandler(async (req, res) =>
     return res.status(200).json(cars)
 })
 
-const getCar = asyncHandler(async (req, res) => { })
 
 const updateCarDetails = asyncHandler(async (req, res) => { })
 
@@ -29,4 +28,4 @@ const removeCar = asyncHandler(async (req, res) => { })
 
 
 
-module.exports = { addNewCar, updateCarDetails, removeCar, getAllCars, getCar }
+module.exports = { addNewCar, updateCarDetails, removeCar, getAllCars }

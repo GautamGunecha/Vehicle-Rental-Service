@@ -13,6 +13,7 @@ import Collections from '../pages/collections/Collections'
 import { useSelector } from 'react-redux'
 import UserBookings from '../pages/bookings/UserBookings'
 import UpdateProfile from '../pages/profile/UpdateProfile'
+import SingleCar from '../pages/details/SingleCar'
 
 const MyRoutes = () =>
 {
@@ -35,6 +36,8 @@ const MyRoutes = () =>
                 <Route exact path='/collections' element={<Collections />} />
                 <Route exact path='/mybookings' element={userInfo ? <UserBookings /> : <Home />} />
                 <Route exact path='/update/profile' element={userInfo ? <UpdateProfile /> : <Home />} />
+
+                <Route exact path='/car/:id' element={<SingleCar />} />
             </Routes>
         </BrowserRouter>
     )

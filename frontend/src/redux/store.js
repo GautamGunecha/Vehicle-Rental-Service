@@ -3,10 +3,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import { alertReducer } from './reducers/alertReducer'
 import { loginReducer } from './reducers/authReducer'
+import { getAllCarsReducer } from './reducers/carReducer'
 
 const rootReducer = combineReducers({
     alertReducer,
-    userLogin: loginReducer
+    userLogin: loginReducer,
+    carsCollections: getAllCarsReducer
 })
 
 const userInfoFromStorage = localStorage.getItem("userInfo")

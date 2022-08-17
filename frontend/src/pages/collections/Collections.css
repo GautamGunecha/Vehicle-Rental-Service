@@ -1,0 +1,49 @@
+.ourcollections {
+    width: 100%;
+    margin-top: 2em;
+}
+
+.ourcollections-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.collections-display {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1em auto;
+    gap: 1em;
+}
+
+
+.collections-data {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.collections-data:hover {
+    border: 1px solid green;
+}
+
+.collections-data img {
+    width: 30em;
+}
+
+.collections-data-details {
+    border-top: 1px solid #ccc;
+    padding: 5px;
+    background-color: rgb(245, 239, 239);
+}
+
+.collections-data-details span {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: 15px;
+}
