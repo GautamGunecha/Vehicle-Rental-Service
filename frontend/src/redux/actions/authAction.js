@@ -55,3 +55,36 @@ export const userLogout = () => async (dispatch) =>
         })
     }
 }
+
+export const userUpdate = (data) => async (dispatch) =>
+{
+    dispatch({
+        type: actionTypes.LOADING,
+        payload: true
+    })
+
+    try
+    {
+        dispatch({
+            type: actionTypes.USER_UPDATE,
+            payload: data
+        })
+
+        dispatch({
+            type: actionTypes.USER_LOGIN,
+            payload: data
+        })
+
+        localStorage.setItem("userInfo", JSON.stringify(data));
+        dispatch({
+            type: actionTypes.LOADING,
+            payload: false
+        })
+    } catch (error)
+    {
+        dispatch({
+            type: actionTypes.LOADING,
+            payload: false
+        })
+    }
+}

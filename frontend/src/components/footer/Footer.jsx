@@ -11,7 +11,6 @@ import
 
 const Footer = () =>
 {
-    const date = new Date()
 
     return (
         <footer className='footer'>

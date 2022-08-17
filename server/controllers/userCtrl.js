@@ -29,6 +29,7 @@ const register = asyncHandler(async (req, res) =>
         return res.status(400).json({ msg: error })
     }
 })
+
 const login = asyncHandler(async (req, res) =>
 {
     try
@@ -60,10 +61,41 @@ const login = asyncHandler(async (req, res) =>
     }
 })
 
+const updateUserProfile = asyncHandler(async (req, res) =>
+{
+    const user = await User.findOne()
+
+    if (user)
+    {
+        user.username = req.body.username || user.username;
+        user.email = req.body.email || user.email;
+        if (req.body.password)
+        {
+            const salt = await bcrypt.genSalt(13)
+            const hashPassword = await bcrypt.hash(req.body.password, salt)
+            user.password = hashPassword;
+        }
+
+        const updatedUser = await user.save();
+
+        return res.status({
+            token: generateToken(updatedUser._id),
+            _id: updatedUser._id,
+            username: updatedUser.username,
+            email: updatedUser.email,
+            isAdmin: updatedUser.isAdmin,
+            avatar: updatedUser.avatar
+        })
+    } else
+    {
+        return res.status(400).json({ msg: 'User not found' })
+    }
+})
+
 const generateToken = payload =>
 {
     return jwt.sign(payload, process.env.JWT_SECRET_KEY,
         { expiresIn: "7d" });
 }
 
-module.exports = { register, login }
+module.exports = { register, login, updateUserProfile }

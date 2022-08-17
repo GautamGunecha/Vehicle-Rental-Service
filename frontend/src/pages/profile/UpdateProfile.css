@@ -1,0 +1,52 @@
+.update-profile {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    width: 62%;
+    margin: 5em auto;
+}
+
+.update-profile section {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.update-profile-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0.4;
+}
+
+.update-profile-left p {
+    margin-top: .5em;
+    text-align: left;
+}
+
+.update-profile-left img {
+    width: 10em;
+    border-radius: 100px;
+}
+
+.update-profile-right {
+    flex: 0.6;
+}
+
+.update-profile-right form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.update-profile-right form input {
+    padding: 8px;
+}
+
+.update-profile-right form button {
+    width: 34%;
+    cursor: pointer;
+    border: 1px solid red;
+    background-color: transparent;
+}
