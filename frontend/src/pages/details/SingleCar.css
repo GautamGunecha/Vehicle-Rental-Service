@@ -1,0 +1,29 @@
+.single-car {
+    width: 100%;
+    display: flex;
+    margin: 3em auto;
+}
+
+.single-car img {
+    object-fit: contain;
+    width: 70em;
+}
+
+.single-car-detail {
+    width: 40em;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.single-car-detail h1 {
+    font-size: 25px;
+}
+
+.single-car-detail p {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
