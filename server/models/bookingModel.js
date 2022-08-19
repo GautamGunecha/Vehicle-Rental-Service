@@ -13,16 +13,14 @@ const bookingSchema = new Schema(
       ref: "User",
       required: true,
     },
-    bookedTimeSlots: [
-      {
-        pickUpDate: {
-          type: String,
-        },
-        dropDate: {
-          type: String,
-        },
+    bookedTimeSlots: {
+      pickUpDate: {
+        type: String,
       },
-    ],
+      dropDate: {
+        type: String,
+      },
+    },
     totalHours: {
       type: Number,
       required: true,
