@@ -22,6 +22,7 @@
 
 
 .collections-data {
+    margin-bottom: 1em;
     cursor: pointer;
     border: 1px solid #ccc;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -46,4 +47,30 @@
     align-items: center;
     gap: .5em;
     font-size: 15px;
+}
+
+.ourcollections-filter {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin: auto;
+    width: 85%;
+}
+
+@media only screen and (max-width: 700px) {
+    .collections-data img {
+        width: 27em;
+    }
+
+    .ourcollections-filter {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .ourcollections-filter label {
+        font-size: 18px;
+        font-weight: 600;
+    }
 }

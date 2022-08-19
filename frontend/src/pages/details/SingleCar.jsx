@@ -5,6 +5,7 @@ import { DatePicker } from 'antd';
 import server from '../../apis/server';
 import { useSelector } from 'react-redux'
 
+
 import Header from '../../components/header/Header'
 import Server from '../../apis/server'
 import { useState } from 'react'
@@ -105,6 +106,7 @@ const SingleCar = () =>
                     <p><BiGasPump size={20} /> {car.fuelType}</p>
                     <p><BiRupee size={20} /> {car.rentPHour}/- per Hour</p>
                     <p><AiOutlineUser size={20} /> {car.nSeater}</p>
+                    {/* Check available slots */}
                     {/* calender */}
                     <RangePicker showTime={{
                         format: 'HH:mm',
@@ -116,16 +118,22 @@ const SingleCar = () =>
                     {
                         rentalHour !== 0
                         && <p>Total Rental Hour: {rentalHour} hours</p>}
-                    <p>Total Cost incl 20% tax: - ₹ {totalCost}</p>
-                    <form onSubmit={handleCarBooking}>
-                        <section>
-                            <input required type="radio" />
-                            <p>Im hereby responsible for any damage done to car during rental period.</p>
-                        </section>
-                        <button type='submit'>Book a Car</button>
-                    </form>
+                    {totalCost !== 0 && <p>Total Cost incl 20% tax: - ₹ {totalCost}</p>}
+                    {
+                        totalCost !== 0 &&
+                        <form onSubmit={handleCarBooking}>
+
+                            <section>
+                                <input required type="radio" />
+                                <p>Im hereby responsible for any damage done to car during rental period.</p>
+                            </section>
+                            <button type='submit'>Book a Car</button>
+                        </form>
+                    }
+
                 </section>
             </div>
+
         </>
     )
 }
