@@ -42,4 +42,25 @@ const createBooking = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { createBooking };
+const getAllBookings = asyncHandler(async (req, res) => {
+  try {
+    const bookings = await Bookings.find().populate("car");
+    res.status(200).json(bookings);
+  } catch (error) {
+    return res.status(400).json(error);
+  }
+});
+
+const getUserBookings = asyncHandler(async (req, res) => {
+  try {
+    const bookings = await Bookings.find({
+      user: req.params.userId,
+    }).populate("car");
+
+    res.status(200).json(bookings);
+  } catch (error) {
+    return res.status(400).json(error);
+  }
+});
+
+module.exports = { createBooking, getAllBookings, getUserBookings };

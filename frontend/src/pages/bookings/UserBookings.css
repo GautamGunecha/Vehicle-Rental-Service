@@ -1,0 +1,60 @@
+.user-bookings {
+    width: 100%;
+}
+
+.user-bookings h1 {
+    text-align: center;
+    color: green;
+}
+
+.user-bookings-details {
+    width: 61%;
+    margin: auto;
+}
+
+.details-section {
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: .2em;
+    margin: 2em auto;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.details-section-right img {
+    width: 30em;
+    object-fit: contain;
+}
+
+.details-section-left p {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .user-bookings-details {
+        width: 95%;
+    }
+
+    .details-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .details-section-right img {
+        width: 10em;
+        object-fit: contain;
+    }
+
+    .details-section-left p {
+        gap: .2em;
+        font-size: 10px;
+        font-weight: 500;
+    }
+}
