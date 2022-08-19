@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom'
 import moment from 'moment'
 import { DatePicker } from 'antd';
 import server from '../../apis/server';
+import { useSelector } from 'react-redux'
 
 import Header from '../../components/header/Header'
 import Server from '../../apis/server'
 import { useState } from 'react'
 import { BiGasPump, BiRupee } from 'react-icons/bi'
 import { AiOutlineUser } from 'react-icons/ai'
+import Notifications from '../../components/notifications/Notifications'
 import "./SingleCar.css"
 
 const SingleCar = () =>
@@ -22,6 +24,10 @@ const SingleCar = () =>
     const [drop, setDrop] = useState()
     const [rentalHour, setRentalHour] = useState(0)
     const [totalCost, setTotalCost] = useState()
+    const [msg, setMsg] = useState("")
+    const [error, setError] = useState("")
+
+    const { userInfo } = useSelector(state => state.userLogin)
 
     useEffect(() =>
     {
@@ -54,18 +60,42 @@ const SingleCar = () =>
     {
         e.preventDefault()
         // send these values to backend
+        if (!userInfo) return setError("Please login to book car")
+
         const reqObject = {
-            user: 'user id',
-            car: 'car id',
-            totalHours: "totalHours",
-            totalAmount: "totalAmount",
-            timeSlots: ['form', 'to']
+            car: id,
+            user: userInfo._id,
+            bookedTimeSlots: {
+                pickUpDate: pickup,
+                dropDate: drop
+            },
+            totalHours: rentalHour,
+            totalAmount: totalCost,
+            paymentID: 123456789
         }
-        await server.post('')
+        await server.post('/bookings', reqObject, {
+            headers: {
+                Authorization: `Bearer ${userInfo.token}`,
+            }
+        }).then(res =>
+        {
+            setError("")
+            setPickup()
+            setDrop()
+            setTotalCost()
+            setRentalHour(0)
+            setMsg(res.data.msg)
+        })
+            .catch(err =>
+            {
+                setMsg("")
+                setError(err.response.data.msg)
+            })
     }
     return (
         <>
             <Header />
+            <Notifications error={error} msg={msg} />
             <div className='single-car'>
                 <img src={car.image} alt="" />
                 <section className='single-car-detail'>
@@ -92,7 +122,7 @@ const SingleCar = () =>
                             <input required type="radio" />
                             <p>Im hereby responsible for any damage done to car during rental period.</p>
                         </section>
-                        <button>Book a Car</button>
+                        <button type='submit'>Book a Car</button>
                     </form>
                 </section>
             </div>
