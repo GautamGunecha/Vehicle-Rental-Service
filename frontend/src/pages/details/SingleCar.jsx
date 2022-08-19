@@ -135,6 +135,7 @@ const SingleCar = () =>
                             <StripeCheckout
                                 token={getToken}
                                 shippingAddress
+                                billingAddress
                                 amount={totalCost * 100}
                                 currency='inr'
                                 stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
