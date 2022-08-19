@@ -55,7 +55,9 @@ const Header = () =>
             {showNav ?
                 <section className='header-mobile'>
                     <p>Home</p>
-                    <p>Our Collections</p>
+                    <Link to='/collections'>
+                        <p>Our Collections</p>
+                    </Link>
                     <p>About Us</p>
                     {
                         userInfo ? <Profile /> :

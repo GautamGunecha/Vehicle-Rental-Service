@@ -6,11 +6,11 @@
 
 .single-car img {
     object-fit: contain;
-    width: 70em;
+    width: 60%;
 }
 
 .single-car-detail {
-    width: 40em;
+    width: 38%;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -26,4 +26,36 @@
     display: flex;
     align-items: center;
     gap: .5em;
+}
+
+.single-car-detail button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.5s;
+    font-size: 15px;
+}
+
+.single-car-detail button:hover {
+    background-color: red;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+@media only screen and (max-width: 700px) {
+    .single-car {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1em;
+    }
+
+    .single-car img {
+        object-fit: contain;
+        width: 29em;
+    }
+
+    .single-car-detail {
+        width: 100%;
+    }
 }

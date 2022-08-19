@@ -13,6 +13,7 @@ const SingleCar = () =>
     const { id } = useParams()
 
     const [car, setCar] = useState([])
+
     useEffect(() =>
     {
         const getCar = () =>
@@ -37,6 +38,7 @@ const SingleCar = () =>
                     <p><BiRupee size={20} /> {car.rentPHour}/- per Hour</p>
                     <p><AiOutlineUser size={20} /> {car.nSeater}</p>
                     {/* calender */}
+
                     <p>Total Cost incl taxes: - </p>
                     <button>Book a Car</button>
                 </section>
