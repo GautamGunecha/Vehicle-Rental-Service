@@ -4,7 +4,7 @@ import moment from 'moment'
 import { DatePicker } from 'antd';
 import server from '../../apis/server';
 import { useSelector } from 'react-redux'
-
+import StripeCheckout from 'react-stripe-checkout';
 
 import Header from '../../components/header/Header'
 import Server from '../../apis/server'
@@ -57,9 +57,8 @@ const SingleCar = () =>
         setRentalHour(values[1].diff(values[0], 'hours'))
     }
 
-    const handleCarBooking = async e =>
+    const handleCarBooking = async (token) =>
     {
-        e.preventDefault()
         // send these values to backend
         if (!userInfo) return setError("Please login to book car")
 
@@ -72,7 +71,8 @@ const SingleCar = () =>
             },
             totalHours: rentalHour,
             totalAmount: totalCost,
-            paymentID: 123456789
+            token
+            // paymentID: 123456789
         }
         await server.post('/bookings', reqObject, {
             headers: {
@@ -92,6 +92,11 @@ const SingleCar = () =>
                 setMsg("")
                 setError(err.response.data.msg)
             })
+    }
+
+    const getToken = (token) =>
+    {
+        if (token) handleCarBooking(token)
     }
     return (
         <>
@@ -121,14 +126,22 @@ const SingleCar = () =>
                     {totalCost !== 0 && <p>Total Cost incl 20% tax: - ₹ {totalCost}</p>}
                     {
                         totalCost !== 0 &&
-                        <form onSubmit={handleCarBooking}>
-
-                            <section>
+                        <div>
+                            <section className='form-section'>
                                 <input required type="radio" />
                                 <p>Im hereby responsible for any damage done to car during rental period.</p>
                             </section>
-                            <button type='submit'>Book a Car</button>
-                        </form>
+
+                            <StripeCheckout
+                                token={getToken}
+                                shippingAddress
+                                amount={totalCost * 100}
+                                currency='inr'
+                                stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
+                            >
+                                <button type='submit'>Book a Car</button>
+                            </StripeCheckout>
+                        </div>
                     }
 
                 </section>

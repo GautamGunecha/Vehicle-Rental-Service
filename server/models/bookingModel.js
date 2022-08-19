@@ -30,7 +30,7 @@ const bookingSchema = new Schema(
       required: true,
     },
     paymentID: {
-      type: Number,
+      type: String,
       required: true,
     },
   },

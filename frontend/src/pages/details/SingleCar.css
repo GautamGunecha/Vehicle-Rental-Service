@@ -38,11 +38,11 @@
     width: 100%;
 }
 
-.single-car-detail form {
+.form-section {
     width: 100%;
 }
 
-.single-car-detail form section {
+.form-section {
     display: flex;
     align-items: baseline;
     gap: 2%;
