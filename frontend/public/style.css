@@ -9,9 +9,9 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+    text-decoration: none !important;
+    color: inherit !important;
+    cursor: pointer !important;
 }
 
 h1 {
