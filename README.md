@@ -6,7 +6,7 @@ Admin can easily track down all the bookings from admin page, access only by adm
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/GautamGunecha/Vehicle-Rental-Service/blob/master/frontend/src/assets/images/Drim.png)
 
 
 ## Environment Variables
