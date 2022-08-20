@@ -59,8 +59,6 @@ const SingleCar = () =>
 
     const handleCarBooking = async (token) =>
     {
-        // send these values to backend
-
         const reqObject = {
             car: id,
             user: userInfo._id,
@@ -126,7 +124,7 @@ const SingleCar = () =>
                     {totalCost !== 0 && <p>Total Cost incl 20% tax: - ₹ {totalCost}</p>}
                     {
                         totalCost !== 0 &&
-                        <div>
+                        <form>
                             <section className='form-section'>
                                 <input required type="radio" />
                                 <p>Im hereby responsible for any damage done to car during rental period.</p>
@@ -142,7 +140,7 @@ const SingleCar = () =>
                             >
                                 <button type='submit'>Book a Car</button>
                             </StripeCheckout>
-                        </div>
+                        </form>
                     }
 
                 </section>
