@@ -60,7 +60,6 @@ const SingleCar = () =>
     const handleCarBooking = async (token) =>
     {
         // send these values to backend
-        if (!userInfo) return setError("Please login to book car")
 
         const reqObject = {
             car: id,
@@ -96,6 +95,7 @@ const SingleCar = () =>
 
     const getToken = (token) =>
     {
+        if (!userInfo) return setError("Please login to book car")
         if (token) handleCarBooking(token)
     }
     return (
